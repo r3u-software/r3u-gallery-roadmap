@@ -1,7 +1,7 @@
 (function () {
   var PHASES = [
     { id: 0, n: "PHASE 0", name: "Gallery on your Wi-Fi", about: "Browse, zoom, download and trash photos from a browser.", status: "built", statusText: "BUILT", backend: "None", risk: "Low" },
-    { id: 1, n: "PHASE 1", name: "Phone Link tier", about: "Dashboard tabs for notifications, messages, files and status, with passcode and per-feature switches.", status: "plan", statusText: "PROPOSED", backend: "None", risk: "Medium" },
+    { id: 1, n: "PHASE 1", name: "Phone Link tier", about: "Dashboard tabs for notifications, messages, files and status, with passcode and per-feature switches. Tested on Android 11, 13 and 14 emulators; real-phone check pending.", status: "built", statusText: "BUILT v1.1.0", backend: "None", risk: "Medium" },
     { id: 2, n: "PHASE 2", name: "Accounts and pairing", about: "Sign in, QR pairing, nickname and passcode channels, an online device list.", status: "plan", statusText: "PROPOSED", backend: "Small", risk: "Medium" },
     { id: 3, n: "PHASE 3", name: "Anywhere access", about: "Peer-to-peer WebRTC with a relay fallback and end-to-end encryption.", status: "plan", statusText: "PROPOSED", backend: "Signaling + TURN", risk: "High" },
     { id: 4, n: "PHASE 4", name: "AirMirror tier", about: "Screen mirroring, tap control, remote camera and find phone.", status: "hard", statusText: "STRETCH", backend: "Same as 3", risk: "High" }
@@ -16,15 +16,15 @@
     { f: "Move to trash", s: "Confirmed on the phone, 30-day recovery", pl: ["none", "No"], ad: ["half", "Delete"], me: ["full", "Built"], p: 0 },
     { f: "Works in any browser", s: "No Windows app or account", pl: ["none", "Windows app"], ad: ["full", "Yes"], me: ["full", "Built"], p: 0 },
     { g: "Device and messages" },
-    { f: "Passcode and per-feature switches", s: "Sensitive tabs stay locked", pl: ["unk", "?"], ad: ["unk", "?"], me: ["none", "Not yet"], p: 1 },
-    { f: "Device status", s: "Battery, Wi-Fi, storage, name", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
-    { f: "Notification mirror and dismiss", s: "Needs notification access in Settings", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
-    { f: "Reply from notifications", s: "Where the app offers a reply action", pl: ["full", "Yes"], ad: ["half", "Some apps"], me: ["none", "Not yet"], p: 1 },
-    { f: "SMS read and send", s: "Sideload only", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
-    { f: "Contacts", s: "Names on threads, searchable list", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
-    { f: "Files both ways", s: "Drag to phone, download from phone", pl: ["half", "Drag and drop"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
-    { f: "Clipboard sync", s: "Button or share action; Android limits background reads", pl: ["half", "Partial"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
-    { f: "Find and ring phone", pl: ["half", "Ring"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 1 },
+    { f: "Passcode and per-feature switches", s: "Sensitive tabs stay locked", pl: ["unk", "?"], ad: ["unk", "?"], me: ["full", "Built"], p: 1 },
+    { f: "Device status", s: "Battery, Wi-Fi, storage, name", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
+    { f: "Notification mirror and dismiss", s: "Needs notification access in Settings", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
+    { f: "Reply from notifications", s: "Where the app offers a reply action", pl: ["full", "Yes"], ad: ["half", "Some apps"], me: ["full", "Built"], p: 1 },
+    { f: "SMS read and send", s: "Sideload only", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
+    { f: "Contacts", s: "Names on threads, searchable list", pl: ["full", "Yes"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
+    { f: "Files both ways", s: "Drag to phone, download from phone", pl: ["half", "Drag and drop"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
+    { f: "Clipboard sync", s: "Button or share action; Android limits background reads", pl: ["half", "Partial"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
+    { f: "Find and ring phone", pl: ["half", "Ring"], ad: ["full", "Yes"], me: ["full", "Built"], p: 1 },
     { g: "Accounts and reach" },
     { f: "Accounts and device list", s: "Online or offline per phone", pl: ["full", "Microsoft"], ad: ["full", "Yes"], me: ["none", "Not yet"], p: 2 },
     { f: "Nickname + passcode channels", s: "Pick a name, others need the passcode", pl: ["none", "No"], ad: ["half", "Device name"], me: ["none", "Not yet"], p: 2 },
@@ -88,7 +88,7 @@
       tr.appendChild(c1);
       [r.pl, r.ad, r.me].forEach(function (v) { var td = el("td"); td.appendChild(mark(v)); tr.appendChild(td); });
       var tg = el("td", "tgt"); var ph = PHASES[r.p];
-      tg.appendChild(el("span", "pill " + ph.status, r.p === 0 ? "BUILT" : "PHASE " + r.p)); tr.appendChild(tg);
+      tg.appendChild(el("span", "pill " + ph.status, r.p <= 1 ? "BUILT" : "PHASE " + r.p)); tr.appendChild(tg);
     }
     rows.appendChild(tr);
   });
