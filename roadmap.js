@@ -1,6 +1,6 @@
 (function () {
   var PHASES = [
-    { id: 0, n: "PHASE 0", name: "Gallery on your Wi-Fi", about: "Browse, zoom, download and trash photos from a browser.", status: "built", statusText: "BUILT", backend: "None", risk: "Low" },
+    { id: 0, n: "PHASE 0", name: "Photos on your Wi-Fi", about: "Browse, zoom, download and trash photos from a browser.", status: "built", statusText: "BUILT", backend: "None", risk: "Low" },
     { id: 1, n: "PHASE 1", name: "Phone Link tier", about: "Dashboard tabs for notifications, messages, files and status, with passcode and per-feature switches. Tested on Android 11, 13 and 14 emulators; real-phone check pending.", status: "built", statusText: "BUILT v1.1.0", backend: "None", risk: "Medium" },
     { id: 2, n: "PHASE 2", name: "Accounts and pairing", about: "Sign in, QR pairing, nickname and passcode channels, an online device list.", status: "plan", statusText: "PROPOSED", backend: "Small", risk: "Medium" },
     { id: 3, n: "PHASE 3", name: "Anywhere access", about: "Peer-to-peer WebRTC with a relay fallback and end-to-end encryption.", status: "plan", statusText: "PROPOSED", backend: "Signaling + TURN", risk: "High" },

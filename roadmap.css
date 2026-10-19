@@ -168,3 +168,6 @@ footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line);
 .fig { margin: 0; }
 .pill.self-start { align-self: flex-start; }
 svg .acc-text { fill: var(--accent); }
+
+.eyebrow a { color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; }
+.eyebrow a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

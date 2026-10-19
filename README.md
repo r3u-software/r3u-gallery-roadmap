@@ -1,5 +1,5 @@
-# R3U Gallery Roadmap
+# R3U | Phone Link: roadmap and presentation
 
-Static page: what R3U Gallery does today and the five-phase plan toward full phone link in the browser.
+Static pages for R3U | Phone Link: the roadmap (home page) and a slide presentation with screenshots (`/deck/`).
 
-Live: https://r3u-software.github.io/r3u-gallery-roadmap/
+Live: https://r3u-software.github.io/r3u-gallery-roadmap/ (roadmap) and https://r3u-software.github.io/r3u-gallery-roadmap/deck/ (presentation)
