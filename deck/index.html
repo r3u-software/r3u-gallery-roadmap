@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <title>R3U | Phone Link: the presentation</title>
-<meta name="description" content="R3U | Phone Link lets you use your Android phone from any browser on your Wi-Fi: photos, notifications, messages, files. How it works, by phase, with screenshots.">
+<meta name="description" content="R3U | Phone Link lets you use your Android phone from any browser on your Wi-Fi: photos, notifications, messages, contacts, files. How it works, with screenshots.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233d5afe'/%3E%3Cpath d='M7 22l6-7 4 5 3-3 5 5z' fill='%23fff'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="deck.css">
 </head>
@@ -19,8 +19,8 @@
 <section class="slide dark title-slide">
   <div class="logo" aria-hidden="true"></div>
   <h1>R3U<span class="sep">|</span><span class="grad">Phone Link</span></h1>
-  <p class="lead">Your Android phone, in any browser on your Wi-Fi. Photos, notifications, messages and files, without a cable, a cloud or an account.</p>
-  <div class="meta-row"><span class="chip">Presentation</span><span class="chip">Version 1.1</span><span class="chip">Android 11 and newer</span></div>
+  <p class="lead">Your Android phone, in any browser on your Wi-Fi. Photos, notifications, messages, contacts and files, without a cable, a cloud or an account.</p>
+  <div class="meta-row"><span class="chip">Presentation</span><span class="chip">Version 1.1.1 plus the new layout</span><span class="chip">Android 11 and newer</span></div>
 </section>
 
 <!-- 2. What it is -->
@@ -30,7 +30,7 @@
   <div class="grid3">
     <div class="card"><span class="num">1</span><h3>Install the app</h3><p>Download the signed APK from the landing page and install it on the phone. Approve "Install unknown apps" once.</p></div>
     <div class="card"><span class="num">2</span><h3>Unlock and set a passcode</h3><p>Allow photo access, confirm with your fingerprint, face or screen lock, then choose a web passcode. The server starts by itself.</p></div>
-    <div class="card"><span class="num">3</span><h3>Open the link</h3><p>Scan the QR code or type the link in a browser on the same Wi-Fi. Enter the passcode and the dashboard opens.</p></div>
+    <div class="card"><span class="num">3</span><h3>Open the link</h3><p>Scan the QR code or type the link in a browser on the same Wi-Fi. Enter the passcode and your phone appears.</p></div>
   </div>
   <p class="lead">Nothing is uploaded anywhere. Everything travels from the phone to your browser over your own network.</p>
 </section>
@@ -53,16 +53,16 @@
     <rect class="box-ok" x="30" y="260" width="175" height="50" rx="10"></rect>
     <text x="42" y="291">Notifications</text>
     <rect class="box-ok" x="225" y="260" width="175" height="50" rx="10"></rect>
-    <text x="237" y="291">Files, clipboard, ring</text>
+    <text x="237" y="291">Files, find, open</text>
 
     <rect class="box" x="680" y="70" width="410" height="270" rx="18"></rect>
     <text class="strong" x="700" y="102">Any computer</text>
     <text class="sm" x="700" y="124">Windows, Mac or Linux, any browser</text>
     <rect class="box-a" x="700" y="140" width="370" height="50" rx="10"></rect>
-    <text x="716" y="171">Web dashboard (served by the phone)</text>
+    <text x="716" y="171">Web app (served by the phone)</text>
     <rect class="box-ok" x="700" y="200" width="370" height="110" rx="10"></rect>
-    <text x="716" y="232">Photos, Notifications, Messages,</text>
-    <text x="716" y="258">Files, Phone: one tab each</text>
+    <text x="716" y="232">Ribbon, app bar, list pane,</text>
+    <text x="716" y="258">content and status bar</text>
     <text class="sm" x="716" y="288">Passcode lock before anything opens</text>
 
     <path class="ln" d="M420 205 H680" marker-start="url(#ah)" marker-end="url(#ah)"></path>
@@ -80,7 +80,26 @@
   <p class="cap">The internet is only used to download the app. Photos and messages never leave your network.</p>
 </section>
 
-<!-- 4. Session flow -->
+<!-- 4. The layout -->
+<section class="slide">
+  <span class="kicker">The new layout</span>
+  <h2>One familiar structure for every app</h2>
+  <div class="row">
+    <div class="annot">
+      <img class="shot" src="img/03-selection.png" alt="The web app with ribbon, app bar, list pane, content and status bar">
+      <span class="pin p1">1</span><span class="pin p2">2</span><span class="pin p3">3</span><span class="pin p4">4</span><span class="pin p5">5</span>
+    </div>
+    <ol class="legend">
+      <li><div><b>Ribbon</b><span>Home, View and Tools tabs with the commands for what you are doing.</span></div></li>
+      <li><div><b>App bar</b><span>Photos, Alerts, Messages, Contacts, Files and Phone.</span></div></li>
+      <li><div><b>List pane</b><span>Albums, conversations, contacts or folders for that app.</span></div></li>
+      <li><div><b>Content</b><span>The photo grid, a conversation, a contact card.</span></div></li>
+      <li><div><b>Status bar</b><span>Connection, phone name, battery, and counts.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5. Session flow -->
 <section class="slide">
   <span class="kicker">How a session starts</span>
   <h2>From opening the app to seeing your phone</h2>
@@ -91,56 +110,55 @@
     <div class="step"><span class="n">PHONE 4</span><b>Server starts</b><p>A random token is created. The link and QR code appear.</p></div>
     <div class="step"><span class="n">COMPUTER 1</span><b>Open the link</b><p>The token becomes a protected cookie and disappears from the address bar.</p></div>
     <div class="step"><span class="n">COMPUTER 2</span><b>Enter the passcode</b><p>Five wrong tries lock that computer out for a while.</p></div>
-    <div class="step"><span class="n">COMPUTER 3</span><b>Dashboard</b><p>Only the features you switched on in the app are available.</p></div>
+    <div class="step"><span class="n">COMPUTER 3</span><b>Use your phone</b><p>Only the features you switched on in the app are available.</p></div>
     <div class="step"><span class="n">ANYTIME</span><b>Stop</b><p>Stop server in the app or the notification. Wi-Fi off also stops sharing.</p></div>
   </div>
 </section>
 
-<!-- 5. Android screens -->
+<!-- 6. Android screens -->
 <section class="slide">
   <span class="kicker">On the phone</span>
-  <h2>The app has three screens you will use</h2>
+  <h2>The app has a few screens you will use</h2>
   <div class="shots">
-    <figure class="figure"><img class="shot phone" src="img/a1-running.png" alt="Running screen with QR code and link"><figcaption class="cap">Running: QR code, link, Copy link, Stop server</figcaption></figure>
+    <figure class="figure"><img class="shot phone" src="img/a1-running.png" alt="Running screen with QR code and link"><figcaption class="cap">Running: QR code, link, Copy link</figcaption></figure>
     <figure class="figure"><img class="shot phone" src="img/a2-features.png" alt="Features screen with switches"><figcaption class="cap">Features: switch on only what you need</figcaption></figure>
     <figure class="figure"><img class="shot phone" src="img/a3-passcode.png" alt="Change web passcode screen"><figcaption class="cap">Web passcode: 6 or more characters</figcaption></figure>
     <figure class="figure"><img class="shot phone" src="img/a4-notification.png" alt="Notification shade with the ongoing notification"><figcaption class="cap">Always visible: ongoing notification</figcaption></figure>
   </div>
 </section>
 
-<!-- 6. Photos -->
+<!-- 7. Photos -->
 <section class="slide">
   <span class="kicker">Photos</span>
-  <h2>Your whole library, fast</h2>
+  <h2>Your whole library, by album</h2>
   <div class="row">
-    <img class="shot w760" src="img/02-photos.png" alt="Photo grid grouped by day">
+    <img class="shot w760" src="img/09-album.png" alt="Photo grid for one album">
     <div class="col">
       <ul class="points small">
+        <li>Albums come from the folders on the phone: Camera, Screenshots, WhatsApp Images and more.</li>
         <li>Handles 10,000+ photos; tested with 12,000.</li>
-        <li>Grouped by day, correct aspect ratios, lazy thumbnails.</li>
-        <li>Filters: All, Screenshots, Large files over 5 MB.</li>
-        <li>Sort newest or oldest first.</li>
-        <li>HEIC photos preview as JPEG; downloads give the original.</li>
-        <li>Light and dark mode follow your system.</li>
+        <li>Grouped by day, with correct aspect ratios.</li>
+        <li>Smart filters: Screenshots, Large files over 5 MB.</li>
+        <li>Search by name, sort, and make the thumbnails larger or smaller.</li>
       </ul>
       <p class="cap">Screenshots use sample data, not real photos.</p>
     </div>
   </div>
 </section>
 
-<!-- 7. Select, download, trash -->
+<!-- 8. Select, download, trash -->
 <section class="slide">
   <span class="kicker">Photos</span>
   <h2>Select, download or move to trash</h2>
   <div class="row">
-    <figure class="figure"><img class="shot w380" src="img/03-selection.png" alt="Three photos selected with the action bar"><figcaption class="cap">Click the circle, or shift-click for a range</figcaption></figure>
+    <figure class="figure"><img class="shot w380" src="img/03-selection.png" alt="Three photos selected, ribbon commands enabled"><figcaption class="cap">The ribbon lights up when you select</figcaption></figure>
     <figure class="figure"><img class="shot w380" src="img/04-trash-confirm.png" alt="Confirm move to trash dialog"><figcaption class="cap">Confirm in the browser</figcaption></figure>
     <figure class="figure"><img class="shot w380" src="img/05-trash-waiting.png" alt="Waiting for confirmation on the phone"><figcaption class="cap">Then confirm on the phone</figcaption></figure>
   </div>
   <p class="lead">One photo downloads as a file; several stream as a zip straight to disk. Trashed photos stay in Android's trash for 30 days.</p>
 </section>
 
-<!-- 8. Viewer -->
+<!-- 9. Viewer -->
 <section class="slide">
   <span class="kicker">Photos</span>
   <h2>A proper photo viewer</h2>
@@ -156,52 +174,71 @@
   </ul>
 </section>
 
-<!-- 9. Notifications -->
+<!-- 10. Notifications -->
 <section class="slide">
-  <span class="kicker">Notifications</span>
+  <span class="kicker">Alerts</span>
   <h2>Phone notifications on your computer</h2>
   <div class="row">
-    <img class="shot w760" src="img/10-notifications.png" alt="Notifications tab with reply boxes">
+    <img class="shot w760" src="img/10-notifications.png" alt="Notifications with apps in the list pane">
     <div class="col">
       <ul class="points small">
-        <li>Live list, refreshed every few seconds.</li>
-        <li>Dismiss one, and it disappears on the phone too.</li>
+        <li>Apps with notifications are listed on the left, with counts.</li>
+        <li>Dismiss one or all; it clears on the phone too.</li>
         <li>Reply to chat apps that offer a reply action.</li>
         <li>Needs Notification access, switched on once in Android settings.</li>
-        <li>Off by default; you switch it on in the app.</li>
+        <li>The badge on the app bar shows how many are waiting.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- 10. Messages -->
+<!-- 11. Messages -->
 <section class="slide">
   <span class="kicker">Messages</span>
   <h2>Read and send text messages</h2>
   <div class="row">
-    <img class="shot w760" src="img/11-messages.png" alt="Messages tab with conversation list and chat">
+    <img class="shot w760" src="img/11-messages.png" alt="Conversations and an open chat">
     <div class="col">
       <ul class="points small">
-        <li>Conversations with contact names.</li>
+        <li>Conversations on the left, with contact names.</li>
         <li>Full history for the open conversation.</li>
         <li>Send from the browser, delivered from the phone's number.</li>
-        <li>Needs SMS and contacts permission; off by default.</li>
+        <li>New message to any number from the ribbon.</li>
+        <li>Needs SMS permission; off by default.</li>
       </ul>
       <p class="cap">Known limit: Android records sent texts only for the default SMS app, so a reply sent here may not appear in history later.</p>
     </div>
   </div>
 </section>
 
-<!-- 11. Files -->
+<!-- 12. Contacts -->
+<section class="slide">
+  <span class="kicker">Contacts</span>
+  <h2>Look up anyone, then message or call</h2>
+  <div class="row">
+    <img class="shot w760" src="img/12-contacts.png" alt="Contact card with message and call buttons">
+    <div class="col">
+      <ul class="points small">
+        <li>A to Z list with search by name or number.</li>
+        <li>Every number and email, with a Copy button.</li>
+        <li>Send message jumps straight into a new text.</li>
+        <li>Call on phone opens the phone's dialer with the number filled in.</li>
+        <li>Needs contacts permission; off by default.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Files -->
 <section class="slide">
   <span class="kicker">Files and clipboard</span>
   <h2>Move files and text both ways</h2>
   <div class="row">
-    <img class="shot w760" src="img/12-files.png" alt="Files tab with drop zone and clipboard">
+    <img class="shot w760" src="img/13-files.png" alt="Files with drop zone">
     <div class="col">
       <ul class="points small">
         <li>Drag files onto the page: they land in the phone's Download/R3U Phone Link folder.</li>
-        <li>Share a file from any app to R3U | Phone Link: it appears in the Files tab to download.</li>
+        <li>Share a file from any app to R3U | Phone Link: it appears here to download.</li>
         <li>Clipboard: send text to the phone, or share text from the phone to the computer.</li>
         <li>No broad storage permission needed.</li>
       </ul>
@@ -209,35 +246,53 @@
   </div>
 </section>
 
-<!-- 12. Phone -->
+<!-- 14. Phone -->
 <section class="slide">
   <span class="kicker">Phone</span>
   <h2>Status and Find my phone</h2>
   <div class="row">
-    <img class="shot w760" src="img/13-phone.png" alt="Phone tab with battery, storage and Find my phone">
+    <img class="shot w760" src="img/14-phone.png" alt="Phone summary with battery, storage and Find my phone">
     <div class="col">
       <ul class="points small">
         <li>Device name, model and Android version.</li>
-        <li>Battery level and charging state.</li>
+        <li>Battery level and charging state, also in the status bar.</li>
         <li>Storage used and free.</li>
-        <li>Find my phone: rings at full volume for up to a minute, even on silent. Stop any time.</li>
+        <li>Find my phone: rings at full volume for up to a minute, even on silent.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- 13. Responsive + dark -->
+<!-- 15. Open on phone -->
+<section class="slide">
+  <span class="kicker">Open on the phone</span>
+  <h2>Send a link, a number or a place to the phone</h2>
+  <div class="row">
+    <img class="shot w760" src="img/15-open-on-phone.png" alt="Open a link on the phone dialog">
+    <div class="col">
+      <ul class="points small">
+        <li>Open a web link in the phone's browser.</li>
+        <li>Open the dialer with a number ready.</li>
+        <li>Show a place or address in the phone's maps.</li>
+        <li>If the app is open it happens at once; otherwise a notification appears for you to tap.</li>
+        <li>You then use it on the phone itself. This is not screen mirroring.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 16. Any screen -->
 <section class="slide">
   <span class="kicker">Any screen</span>
   <h2>Works on a laptop, a tablet or another phone</h2>
   <div class="shots">
-    <figure class="figure"><img class="shot w560" src="img/02-photos-dark.png" alt="Dark mode photo grid"><figcaption class="cap">Dark mode follows your system</figcaption></figure>
-    <figure class="figure"><img class="shot tall" src="img/14-mobile-photos.png" alt="Phone-sized photo grid"><figcaption class="cap">Phone width: photos</figcaption></figure>
-    <figure class="figure"><img class="shot tall" src="img/16-mobile-messages.png" alt="Phone-sized messages"><figcaption class="cap">Phone width: messages</figcaption></figure>
+    <figure class="figure"><img class="shot w560" src="img/02-photos-dark.png" alt="Dark mode"><figcaption class="cap">Dark mode follows your system</figcaption></figure>
+    <figure class="figure"><img class="shot tall" src="img/16-mobile-photos.png" alt="Phone-sized layout with bottom app bar"><figcaption class="cap">Narrow: app bar moves to the bottom</figcaption></figure>
+    <figure class="figure"><img class="shot tall" src="img/17-mobile-albums.png" alt="Phone-sized layout with the list sliding over"><figcaption class="cap">The list slides over the content</figcaption></figure>
   </div>
 </section>
 
-<!-- 14. Lock screen + security -->
+<!-- 17. Security -->
 <section class="slide">
   <span class="kicker">Security</span>
   <h2>Locked by default, in layers</h2>
@@ -255,64 +310,64 @@
   <p class="cap">Honest limit: traffic is plain HTTP on your Wi-Fi, so use a network you trust. HTTPS is a later project.</p>
 </section>
 
-<!-- 15. Quality -->
+<!-- 18. Quality -->
 <section class="slide">
   <span class="kicker">Built and tested</span>
   <h2>Everything is built and checked in the cloud</h2>
   <div class="grid4">
-    <div class="card"><h3>Unit tests</h3><p>Pagination, token and cookie rules, passcode lockout, feature switches, range requests, zip streaming, file upload.</p></div>
+    <div class="card"><h3>Unit tests</h3><p>Pagination, albums, token and cookie rules, passcode lockout, feature switches, contacts, open-on-phone, range requests, zip streaming, file upload.</p></div>
     <div class="card"><h3>Emulator tests</h3><p>Android 11, 13 and 14 emulators start the real server and exercise it end to end.</p></div>
     <div class="card"><h3>Signed releases</h3><p>Every version tag builds, verifies and publishes a signed APK.</p></div>
-    <div class="card"><h3>Real phone</h3><p>Checked by the owner on an Android 16 phone: photos, notifications, messages, files and status.</p></div>
+    <div class="card"><h3>Real phone</h3><p>Version 1.1 was checked on an Android 16 phone. The new layout has not been released or checked on a phone yet.</p></div>
   </div>
   <p class="lead">No local Android setup is needed. GitHub Actions builds, tests and releases; GitHub Pages hosts the landing page and this presentation.</p>
 </section>
 
-<!-- 16. Phases -->
+<!-- 19. Phases -->
 <section class="slide">
   <span class="kicker">Roadmap by phase</span>
   <h2>Where it is and where it is going</h2>
   <div class="phases">
     <div class="phase done"><span class="pn">PHASE 0</span><span class="pill built">BUILT</span><h3>Photos</h3><p>Browse, zoom, download, trash.</p></div>
-    <div class="phase done"><span class="pn">PHASE 1</span><span class="pill built">BUILT</span><h3>Phone dashboard</h3><p>Passcode, notifications, messages, files, status, find phone.</p></div>
-    <div class="phase"><span class="pn">PHASE 2</span><span class="pill plan">PLANNED</span><h3>Accounts and pairing</h3><p>Named phones, passcode channels, an online device list.</p></div>
-    <div class="phase"><span class="pn">PHASE 3</span><span class="pill plan">PLANNED</span><h3>Anywhere access</h3><p>Peer-to-peer, end-to-end encrypted, from any network.</p></div>
-    <div class="phase"><span class="pn">PHASE 4</span><span class="pill hard">STRETCH</span><h3>App mirroring</h3><p>Use installed apps through a mirrored screen.</p></div>
+    <div class="phase done"><span class="pn">PHASE 1</span><span class="pill built">BUILT</span><h3>Phone dashboard</h3><p>Passcode, notifications, messages, contacts, files, status, find, open on phone, new layout.</p></div>
+    <div class="phase"><span class="pn">PHASE 2</span><span class="pill plan">ON HOLD</span><h3>Accounts and pairing</h3><p>Named phones, passcode channels, an online device list.</p></div>
+    <div class="phase"><span class="pn">PHASE 3</span><span class="pill plan">ON HOLD</span><h3>Anywhere access</h3><p>Peer-to-peer, end-to-end encrypted, from any network.</p></div>
+    <div class="phase"><span class="pn">PHASE 4</span><span class="pill hard">ON HOLD</span><h3>App mirroring</h3><p>Use installed apps through a mirrored screen.</p></div>
   </div>
-  <p class="lead">Phases 2 and 3 need a small cloud service. Phase 4 is the riskiest and may not work on every phone.</p>
+  <p class="lead">The new layout is built and in the repository but not yet released as a version. Phases 2 to 4 are set aside for now.</p>
 </section>
 
-<!-- 17. Compare -->
+<!-- 20. Compare -->
 <section class="slide">
   <span class="kicker">How it compares</span>
   <h2>Next to the tools people already use</h2>
   <table class="cmp">
     <thead><tr><th>Feature</th><th>Microsoft Phone Link</th><th>AirDroid Web</th><th>R3U | Phone Link</th></tr></thead>
     <tbody>
-      <tr><td>Whole photo library, filters, zip</td><td class="p">Recent only</td><td class="y">Yes</td><td class="y">Yes (built)</td></tr>
+      <tr><td>Whole photo library, albums, zip</td><td class="p">Recent only</td><td class="y">Yes</td><td class="y">Yes (built)</td></tr>
       <tr><td>Works in any browser</td><td class="n">Windows app</td><td class="y">Yes</td><td class="y">Yes (built)</td></tr>
-      <tr><td>Notifications, messages, files</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes (built)</td></tr>
+      <tr><td>Notifications, messages, contacts, files</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes (built)</td></tr>
       <tr><td>Account or cloud needed</td><td class="p">Microsoft account</td><td class="p">AirDroid account</td><td class="y">None</td></tr>
-      <tr><td>Access from anywhere</td><td class="p">Limited</td><td class="y">Yes</td><td class="p">Phase 3</td></tr>
-      <tr><td>Screen mirroring and app control</td><td class="p">Apps window</td><td class="y">Yes</td><td class="p">Phase 4</td></tr>
+      <tr><td>Access from anywhere</td><td class="p">Limited</td><td class="y">Yes</td><td class="p">On hold</td></tr>
+      <tr><td>Screen mirroring and app control</td><td class="p">Apps window</td><td class="y">Yes</td><td class="p">On hold</td></tr>
     </tbody>
   </table>
   <p class="cap">Competitor columns come from general knowledge of those products and may be out of date.</p>
 </section>
 
-<!-- 18. Limits -->
+<!-- 21. Limits -->
 <section class="slide">
   <span class="kicker">Straight talk</span>
   <h2>What it does not do yet</h2>
   <div class="grid2">
-    <div class="card"><h3>Not on the internet yet</h3><p>Phone and computer must be on the same Wi-Fi until Phase 3.</p></div>
-    <div class="card"><h3>No app mirroring yet</h3><p>Installed apps can't run in a browser. Mirroring the screen is Phase 4.</p></div>
+    <div class="card"><h3>Not on the internet yet</h3><p>Phone and computer must be on the same Wi-Fi.</p></div>
+    <div class="card"><h3>No app mirroring yet</h3><p>Installed apps can't run in a browser. Mirroring the screen is a separate, later project.</p></div>
     <div class="card"><h3>Plain HTTP on the LAN</h3><p>Passcode and content can be read by someone sniffing your Wi-Fi.</p></div>
     <div class="card"><h3>Sideloaded app</h3><p>Not on the Play Store, because SMS and notification access would be rejected there.</p></div>
   </div>
 </section>
 
-<!-- 19. Close -->
+<!-- 22. Close -->
 <section class="slide dark title-slide">
   <h1><span class="grad">Try it</span></h1>
   <p class="lead">Download the app, open the link on your computer, and use your phone from the browser.</p>
@@ -328,7 +383,7 @@
 <button id="prev" class="navbtn" aria-label="Previous slide">&#8249;</button>
 <button id="next" class="navbtn" aria-label="Next slide">&#8250;</button>
 <div id="help">Arrow keys to move, F for full screen</div>
-<div id="counter" aria-live="polite">1 / 19</div>
+<div id="counter" aria-live="polite">1 / 22</div>
 <script src="deck.js"></script>
 </body>
 </html>

@@ -2,9 +2,9 @@
   var PHASES = [
     { id: 0, n: "PHASE 0", name: "Photos on your Wi-Fi", about: "Browse, zoom, download and trash photos from a browser.", status: "built", statusText: "BUILT", backend: "None", risk: "Low" },
     { id: 1, n: "PHASE 1", name: "Phone Link tier", about: "Dashboard tabs for notifications, messages, files and status, with passcode and per-feature switches. Tested on Android 11, 13 and 14 emulators; real-phone check pending.", status: "built", statusText: "BUILT v1.1.0", backend: "None", risk: "Medium" },
-    { id: 2, n: "PHASE 2", name: "Accounts and pairing", about: "Sign in, QR pairing, nickname and passcode channels, an online device list.", status: "plan", statusText: "PROPOSED", backend: "Small", risk: "Medium" },
-    { id: 3, n: "PHASE 3", name: "Anywhere access", about: "Peer-to-peer WebRTC with a relay fallback and end-to-end encryption.", status: "plan", statusText: "PROPOSED", backend: "Signaling + TURN", risk: "High" },
-    { id: 4, n: "PHASE 4", name: "AirMirror tier", about: "Screen mirroring, tap control, remote camera and find phone.", status: "hard", statusText: "STRETCH", backend: "Same as 3", risk: "High" }
+    { id: 2, n: "PHASE 2", name: "Accounts and pairing", about: "Sign in, QR pairing, nickname and passcode channels, an online device list.", status: "plan", statusText: "ON HOLD", backend: "Small", risk: "Medium" },
+    { id: 3, n: "PHASE 3", name: "Anywhere access", about: "Peer-to-peer WebRTC with a relay fallback and end-to-end encryption.", status: "plan", statusText: "ON HOLD", backend: "Signaling + TURN", risk: "High" },
+    { id: 4, n: "PHASE 4", name: "AirMirror tier", about: "Screen mirroring, tap control, remote camera and find phone.", status: "hard", statusText: "ON HOLD", backend: "Same as 3", risk: "High" }
   ];
 
   // lvl: full | half | none | unk
@@ -88,7 +88,7 @@
       tr.appendChild(c1);
       [r.pl, r.ad, r.me].forEach(function (v) { var td = el("td"); td.appendChild(mark(v)); tr.appendChild(td); });
       var tg = el("td", "tgt"); var ph = PHASES[r.p];
-      tg.appendChild(el("span", "pill " + ph.status, r.p <= 1 ? "BUILT" : "PHASE " + r.p)); tr.appendChild(tg);
+      tg.appendChild(el("span", "pill " + ph.status, r.p <= 1 ? "BUILT" : "ON HOLD")); tr.appendChild(tg);
     }
     rows.appendChild(tr);
   });

@@ -146,3 +146,19 @@ table.cmp td.p { color: var(--warn); }
 .compact .card { padding: 12px 16px; gap: 3px; }
 .compact .card h3 { font-size: 18px; }
 .compact .card p { font-size: 15px; }
+
+/* annotated layout slide */
+.annot { position: relative; display: block; flex: none; }
+.annot img { width: 740px; }
+.pin { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: var(--grad); color: #fff; font: 700 16px/30px system-ui; text-align: center; box-shadow: 0 4px 12px rgba(15, 27, 42, 0.4); border: 2px solid #fff; }
+.pin.p1 { left: 31%; top: 3%; }
+.pin.p2 { left: 0.6%; top: 22%; }
+.pin.p3 { left: 11%; top: 35%; }
+.pin.p4 { left: 60%; top: 40%; }
+.pin.p5 { left: 46%; top: 91%; }
+ol.legend { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; counter-reset: pin; }
+ol.legend li { counter-increment: pin; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; font-size: 19px; }
+ol.legend li::before { content: counter(pin); width: 30px; height: 30px; border-radius: 50%; background: var(--grad); color: #fff; font: 700 15px/30px system-ui; text-align: center; }
+ol.legend b { display: block; }
+ol.legend span { color: var(--muted); font-size: 16px; }
+.btnrow { display: flex; gap: 12px; }
